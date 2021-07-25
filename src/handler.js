@@ -86,15 +86,11 @@ const getBookQuery = (query) => {
     bookQuery = bookQuery.filter((item) =>
       reading === '0' ? item.reading === false : item.reading === true,
     );
-  }
-
-  if (finished) {
+  } else if (finished) {
     bookQuery = bookQuery.filter((item) =>
       reading === '0' ? item.finished === false : item.finished === true,
     );
-  }
-
-  if (name !== undefined) {
+  } else if (name !== undefined) {
     bookQuery = bookQuery.filter((item) =>
       item.name.toLowerCase().includes(name.toLowerCase(), 0),
     );
